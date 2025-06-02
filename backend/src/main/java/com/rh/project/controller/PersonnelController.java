@@ -17,8 +17,13 @@ import com.rh.project.repository.*;
 @RequestMapping("/api")
 public class PersonnelController {
 
-	@Autowired
-	PersonnelRepository personnelRepository;
+	
+	private final PersonnelRepository personnelRepository;
+	
+	
+	public PersonnelController(PersonnelRepository personnelRepository) {
+	   this.personnelRepository= personnelRepository;
+	}
 
 
 	@GetMapping("/personnels")
